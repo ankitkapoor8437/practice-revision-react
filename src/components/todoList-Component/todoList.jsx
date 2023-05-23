@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../functional-component/testf.css'
+import { ListTodo } from '../list-todo-component/ListTodo';
 
 const TodoList = () => {
     const [Todo, setTodo] = useState("");
@@ -28,8 +29,8 @@ const TodoList = () => {
             </form>
 
             <div>
-                {todoList.map((item) => (
-                    <h3>{item}</h3>
+                {todoList.map((item, index) => (
+                    <ListTodo key={index} todoDetails={item}/>
                 ))}
             </div>
         </div>
