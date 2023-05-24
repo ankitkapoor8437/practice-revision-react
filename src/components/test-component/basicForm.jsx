@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../functional-component/testf.css'
+import Axios from 'axios'
 
 const BasicForm = () => {
   const [loginData, setloginData] = useState({
@@ -13,22 +14,26 @@ const BasicForm = () => {
     const name = event.target.name;
     const value = event.target.value;
     console.log(name, value)
-    setloginData((prev)=>{
-      return{
+    setloginData((prev) => {
+      return {
         ...prev, [name]: value
       }
     })
   }
 
-
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log({
-      fname: loginData.firstname,
-      lname: loginData.lastname,
-      email: loginData.email,
-      password: loginData.password
-    });
+    Axios.post("http://localhost:8080/api/v1/auth/register", {
+      firstname: loginData.firstname,
+      lastname: loginData.lastname,
+      password: loginData.password,
+      email: loginData.email
+    })
+      .then((response) => {
+        console.log(response);
+      }).catch((error) => {
+        console.log(error);
+      })
     console.log(loginData)
   }
 
