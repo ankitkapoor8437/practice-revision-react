@@ -7,6 +7,8 @@ import { Studentstate } from './components/states/stateusingclass';
 import Stateusingfunctional from './components/states/stateusingfunctional';
 import FormCompopent from './components/form-component.jsx/form';
 import TodoList from './components/todoList-Component/todoList';
+import Fragment from './components/fragment-components/fragment';
+import BasicForm from './components/test-component/basicForm';
 
 function App() {
   return (
@@ -19,7 +21,13 @@ function App() {
       {/* <Studentstate/> */}
       {/* <Stateusingfunctional/> */}
       {/* <FormCompopent/> */}
-      <TodoList/>
+      {/* <TodoList/> */}
+      {/* <Fragment/> */}
+
+      <BasicForm/>
+
+
+      
 
     </div>
   );
