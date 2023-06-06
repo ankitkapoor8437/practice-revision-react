@@ -11,6 +11,14 @@ import Fragment from './components/fragment-components/fragment';
 import BasicForm from './components/test-component/basicForm';
 import { ReducerFunction } from './components/reducer-component/reduce';
 
+import { Routes, Route } from 'react-router-dom';
+
+
+// Basic CRUD Pages
+import { Create } from './components/CRUD-component/Create-component/create'
+import Read from './components/CRUD-component/Read-component/read';
+import {Update} from './components/CRUD-component/Update-component/update';
+
 function App() {
   return (
     <div className="App">
@@ -27,8 +35,18 @@ function App() {
 
       {/* <BasicForm/> */}
 
-      <ReducerFunction />
+      {/* <ReducerFunction /> */}
 
+
+      {/* CRUD APPLICATION */}
+
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Read />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/update' element={<Update />} />
+        </Routes>
+      </div>
 
 
     </div>
