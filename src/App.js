@@ -9,6 +9,7 @@ import FormCompopent from './components/form-component.jsx/form';
 import TodoList from './components/todoList-Component/todoList';
 import Fragment from './components/fragment-components/fragment';
 import BasicForm from './components/test-component/basicForm';
+import { ReducerFunction } from './components/reducer-component/reduce';
 
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
       {/* <TodoList/> */}
       {/* <Fragment/> */}
 
-      <BasicForm/>
+      {/* <BasicForm/> */}
+
+      <ReducerFunction />
 
 
-      
 
     </div>
   );
